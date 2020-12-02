@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.9.0 on win32)" generated="20201201 22:34:34.585" rpa="false">
+<suite id="s1" name="TesteSiteUnimedRj" source="C:\SuitesSiteUnimed\tests\TesteSiteUnimedRj.robot">
+<test id="s1-t1" name="Caso de Teste 01 - Validar apresentação de resultados com a Especilidade e resultado">
+<kw name="Abrir o navegador" library="Resource" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>browser=${BROWSER}</arg>
+</arguments>
+<msg timestamp="20201201 22:34:34.760" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20201201 22:34:34.760" endtime="20201201 22:34:38.111"></status>
+</kw>
+<status status="PASS" starttime="20201201 22:34:34.760" endtime="20201201 22:34:38.111"></status>
+</kw>
+<kw name="Dado que eu estou logado no site Unimed" library="Resource">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20201201 22:34:38.113" level="INFO">Opening url 'https://www.unimed.coop.br/'</msg>
+<status status="PASS" starttime="20201201 22:34:38.112" endtime="20201201 22:34:41.757"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Portal Nacional de Saúde - Unimed - Institucional</arg>
+</arguments>
+<msg timestamp="20201201 22:34:41.770" level="INFO">Page title is 'Portal Nacional de Saúde - Unimed - Institucional'.</msg>
+<status status="PASS" starttime="20201201 22:34:41.757" endtime="20201201 22:34:41.770"></status>
+</kw>
+<status status="PASS" starttime="20201201 22:34:38.112" endtime="20201201 22:34:41.770"></status>
+</kw>
+<kw name="Quando eu acessar o guia médico" library="Resource">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>/guia-medico</arg>
+</arguments>
+<msg timestamp="20201201 22:34:41.772" level="INFO">Clicking link '/guia-medico'.</msg>
+<status status="PASS" starttime="20201201 22:34:41.771" endtime="20201201 22:34:43.276"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>REDE ASSISTENCIAL</arg>
+</arguments>
+<status status="PASS" starttime="20201201 22:34:43.276" endtime="20201201 22:34:43.296"></status>
+</kw>
+<status status="PASS" starttime="20201201 22:34:41.771" endtime="20201201 22:34:43.297"></status>
+</kw>
+<kw name="E pesquisar pela especialidade &quot;Pediatra&quot; para o estado &quot;Rio de Janeiro&quot; e cidade &quot;Rio de Janeiro&quot;" library="Resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name=pesquisa</arg>
+<arg>${especilidade}</arg>
+</arguments>
+<msg timestamp="20201201 22:34:43.299" level="INFO">Typing text 'Pediatra' into text field 'name=pesquisa'.</msg>
+<status status="PASS" starttime="20201201 22:34:43.298" endtime="20201201 22:34:43.521"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id=btn_pesquisar</arg>
+</arguments>
+<msg timestamp="20201201 22:34:43.521" level="INFO">Clicking button 'id=btn_pesquisar'.</msg>
+<status status="PASS" starttime="20201201 22:34:43.521" endtime="20201201 22:34:43.690"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Selecione o estado e a cidade para localizar a Unimed onde você deseja ser atendido</arg>
+</arguments>
+<status status="PASS" starttime="20201201 22:34:43.691" endtime="20201201 22:34:43.735"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//div[@class='s-field control-group selecione-rede big-field pesquisa-avancada']</arg>
+</arguments>
+<status status="PASS" starttime="20201201 22:34:43.735" endtime="20201201 22:34:43.770"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//div[@class='s-field control-group selecione-rede big-field pesquisa-avancada']</arg>
+</arguments>
+<msg timestamp="20201201 22:34:43.770" level="INFO">Clicking element 'xpath=//div[@class='s-field control-group selecione-rede big-field pesquisa-avancada']'.</msg>
+<status status="PASS" starttime="20201201 22:34:43.770" endtime="20201201 22:34:43.832"></status>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>None</arg>
+<arg>${estado}</arg>
+</arguments>
+<msg timestamp="20201201 22:34:43.833" level="INFO">Sending key(s) ('Rio de Janeiro',) to page.</msg>
+<msg timestamp="20201201 22:34:43.833" level="INFO">Sending keys Rio de Janeiro</msg>
+<status status="PASS" starttime="20201201 22:34:43.832" endtime="20201201 22:34:43.997"></status>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>None</arg>
+<arg>RETURN</arg>
+</arguments>
+<msg timestamp="20201201 22:34:43.998" level="INFO">Sending key(s) ('RETURN',) to page.</msg>
+<msg timestamp="20201201 22:34:43.998" level="INFO">Pressing special key RETURN to browser.</msg>
+<msg timestamp="20201201 22:34:43.998" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20201201 22:34:43.998" endtime="20201201 22:34:44.003"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20201201 22:34:49.004" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20201201 22:34:44.003" endtime="20201201 22:34:49.004"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//div[contains(@class,'-placeholder')][contains(.,'Cidade')]</arg>
+</arguments>
+<msg timestamp="20201201 22:34:49.004" level="INFO">Clicking element 'xpath=//div[contains(@class,'-placeholder')][contains(.,'Cidade')]'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201201 22:34:49.309" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-24.png"&gt;&lt;img src="selenium-screenshot-24.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201201 22:34:49.013" endtime="20201201 22:34:49.309"></status>
+</kw>
+<msg timestamp="20201201 22:34:49.311" level="FAIL">Element with locator 'xpath=//div[contains(@class,'-placeholder')][contains(.,'Cidade')]' not found.</msg>
+<status status="FAIL" starttime="20201201 22:34:49.004" endtime="20201201 22:34:49.311"></status>
+</kw>
+<status status="FAIL" starttime="20201201 22:34:43.298" endtime="20201201 22:34:49.311"></status>
+</kw>
+<kw name="Fechar navegador" library="Resource" type="teardown">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20201201 22:34:49.312" endtime="20201201 22:34:51.661"></status>
+</kw>
+<status status="PASS" starttime="20201201 22:34:49.312" endtime="20201201 22:34:51.661"></status>
+</kw>
+<status status="FAIL" starttime="20201201 22:34:34.758" endtime="20201201 22:34:51.662" critical="yes">Element with locator 'xpath=//div[contains(@class,'-placeholder')][contains(.,'Cidade')]' not found.</status>
+</test>
+<status status="FAIL" starttime="20201201 22:34:34.586" endtime="20201201 22:34:51.664"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="TesteSiteUnimedRj">TesteSiteUnimedRj</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
